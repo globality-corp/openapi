@@ -7,6 +7,7 @@ version = "0.2.0"
 setup(
     name=project,
     version=version,
+    url="https://github.com/jessemyers/openapi",
     description="Python OpenAPI 2.0 (Swagger) object model",
     long_description=open("README.md").read(),
     author="Jesse Myers",
