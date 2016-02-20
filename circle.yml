@@ -1,4 +1,4 @@
 general:
   artifacts:
-   - "dist/*.tar.gz"
+   - "dist"
    - "cover"
