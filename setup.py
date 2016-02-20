@@ -2,7 +2,7 @@
 from setuptools import find_packages, setup
 
 project = "openapi"
-version = "0.1"
+version = "0.2.0"
 
 setup(
     name=project,
