@@ -1,7 +1,42 @@
+##
+# .gitignore
+#
+# Based on:
+#
+# https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+# https://github.com/github/gitignore/blob/master/Python.gitignore
+##
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
 
 # C extensions
 *.so
@@ -42,9 +77,8 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-cover
 *,cover
-.hypothesis/
+cover
 
 # Translations
 *.mo
@@ -58,6 +92,3 @@ docs/_build/
 
 # PyBuilder
 target/
-
-#Ipython Notebook
-.ipynb_checkpoints
