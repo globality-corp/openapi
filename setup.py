@@ -2,15 +2,15 @@
 from setuptools import find_packages, setup
 
 project = "openapi"
-version = "0.1"
+version = "0.2.0"
 
 setup(
     name=project,
     version=version,
     description="Python OpenAPI 2.0 (Swagger) object model",
-    long_description=open("README.md").read(),
-    author="Jesse Myers",
-    author_email="jesse.myers@gmail.com",
+    author="Globality Engineering",
+    author_email="engineering@globality.com",
+    url="https://github.com/globality-corp/openapi",
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     include_package_data=True,
     zip_safe=False,
@@ -25,11 +25,15 @@ setup(
         ],
     },
     setup_requires=[
-        "nose>=1.3.7",
+        "nose>=1.3.6",
     ],
+    dependency_links=[
+    ],
+    entry_points={
+    },
     tests_require=[
-        "coverage>=4.0.3",
-        "mock>=1.3.0",
+        "coverage>=3.7.1",
+        "mock>=1.0.1",
         "PyHamcrest>=1.8.5",
     ],
 )
