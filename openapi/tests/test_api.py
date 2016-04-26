@@ -34,7 +34,8 @@ def _assert_load_and_dump(data):
     assert_that(swagger.paths, is_(instance_of(Paths)))
 
     # key access produces model objects
-    assert_that(swagger.paths[swagger.paths.keys()[0]], is_(instance_of(PathItem)))
+    path_key = next(iter(swagger.paths.keys()))
+    assert_that(swagger.paths[path_key], is_(instance_of(PathItem)))
 
     # index access produces model objects
     assert_that(swagger.consumes[0], is_(instance_of(MimeType)))

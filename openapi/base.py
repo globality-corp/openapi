@@ -9,9 +9,9 @@ from contextlib import closing
 from json import dump, load
 from re import match
 from os.path import dirname, join
-from StringIO import StringIO
 
 from jsonschema import RefResolver, validate
+from six import StringIO
 
 from openapi.naming import make_key_name
 from openapi.registry import lookup, REGISTRY
