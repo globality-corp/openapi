@@ -15,7 +15,7 @@ Model types extend Python `dict`, `list`, or `string` to support reading from JS
 writing to JSON, and validation against (the relevant portion of) the Swagger schema.
 
 As a result, models are interchangeable with their primitive counterparts and can
-be used as much (or as little) as desired to enhange readability or perform validation.
+be used as much (or as little) as desired to enhance readability or perform validation.
 
 Models convert contained primitive types to models when accessed using keys or attributes
 (for `dict`-based types) and when using indexing (for `list`-based access). Access to
@@ -42,7 +42,7 @@ model internals via iteration bypasses conversion.
                 version="1.0.0",
             ),
             basePath="/api",
-			paths=Paths({
+            paths=Paths({
                 "/hello": PathItem(
                     get=Operation(
                         responses=Responses({
@@ -64,7 +64,7 @@ model internals via iteration bypasses conversion.
 
         print swagger.base_path
 
-    Naturally, attribute names that are illegel or that shadow existing attributes
+    Naturally, attribute names that are illegal or that shadow existing attributes
     must be accessed using key syntax:
 
         print swagger.paths["/hello"]["get"].responses["200"].description
