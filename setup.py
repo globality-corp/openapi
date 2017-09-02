@@ -18,6 +18,7 @@ setup(
     install_requires=[
         "inflection>=0.3.1",
         "jsonschema>=2.5.1",
+        "six",
     ],
     extras_require={
         "yaml": [
