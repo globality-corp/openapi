@@ -2,7 +2,7 @@
 from setuptools import find_packages, setup
 
 project = "openapi"
-version = "0.5.0"
+version = "0.6.0"
 
 setup(
     name=project,
@@ -18,6 +18,7 @@ setup(
     install_requires=[
         "inflection>=0.3.1",
         "jsonschema>=2.5.1",
+        "six",
     ],
     extras_require={
         "yaml": [
