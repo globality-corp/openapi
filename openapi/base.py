@@ -6,12 +6,12 @@ these types inherit from the primitive types they extend, but add
 extra behavior to support type-conversion and schema validation.
 """
 from contextlib import closing
+from io import StringIO
 from json import dump, load
 from re import match
 from os.path import dirname, join
 
 from jsonschema import RefResolver, validate
-from six import StringIO
 
 from openapi.naming import make_key_name
 from openapi.registry import lookup, REGISTRY
@@ -40,7 +40,7 @@ class Schema(dict):
             raise
 
 
-class SchemaAware(object):
+class SchemaAware:
     """
     Schema-aware mix-in.
 
