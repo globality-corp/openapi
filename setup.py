@@ -2,7 +2,7 @@
 from setuptools import find_packages, setup
 
 project = "openapi"
-version = "1.0.0"
+version = "1.1.0"
 
 setup(
     name=project,
@@ -11,6 +11,9 @@ setup(
     author="Globality Engineering",
     author_email="engineering@globality.com",
     url="https://github.com/globality-corp/openapi",
+    classifiers=[
+        "Programming Language :: Python :: 3"
+    ],
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     include_package_data=True,
     zip_safe=False,
