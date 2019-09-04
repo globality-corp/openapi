@@ -2,7 +2,7 @@
 from setuptools import find_packages, setup
 
 project = "openapi"
-version = "1.1.0"
+version = "1.1.1"
 
 setup(
     name=project,
@@ -20,7 +20,7 @@ setup(
     keywords="openapi swagger",
     install_requires=[
         "inflection>=0.3.1",
-        "jsonschema>=2.6.0",
+        "jsonschema[format]>=2.6.0",
     ],
     extras_require={
         "yaml": [
