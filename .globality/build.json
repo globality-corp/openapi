@@ -1,6 +1,7 @@
 {
-  "type": "python-library",
   "params": {
     "name": "openapi"
-  }
+  },
+  "type": "python-library",
+  "version": "2022.12.0"
 }
