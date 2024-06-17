@@ -3,6 +3,7 @@ Model registry.
 """
 from openapi.naming import make_definition_name
 
+
 # singleton type registry
 #  -  acts as a store for the jsonschema validator
 #  -  allows object models to construct each other

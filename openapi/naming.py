@@ -34,4 +34,4 @@ def make_definition_name(class_name):
     Convert a class name into a definition name.
 
     """
-    return "#/definitions/{}".format(camelize(class_name, uppercase_first_letter=False))
+    return f"#/definitions/{camelize(class_name, uppercase_first_letter=False)}"

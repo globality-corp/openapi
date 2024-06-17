@@ -3,7 +3,12 @@ Object model.
 """
 from warnings import warn
 
-from openapi.base import SchemaAwareDict, SchemaAwareList, SchemaAwareString, SCHEMA
+from openapi.base import (
+    SCHEMA,
+    SchemaAwareDict,
+    SchemaAwareList,
+    SchemaAwareString,
+)
 from openapi.naming import make_class_name
 from openapi.registry import register
 
@@ -43,4 +48,4 @@ for name, schema in SCHEMA["definitions"].items():
     elif schema_type == "string":
         make_definition(name, SchemaAwareString, schema)
     else:
-        warn("Unsupported schema type: '{}'".format(schema_type))
+        warn(f"Unsupported schema type: '{schema_type}'")
