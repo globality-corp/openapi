@@ -1,17 +1,12 @@
 """
 Tests for validation.
 """
-from hamcrest import (
-    assert_that,
-    calling,
-    raises,
-)
-
+from hamcrest import assert_that, calling, raises
 from jsonschema import ValidationError
 
 from openapi import loads
-from openapi.tests.fixtures import iter_examples
 from openapi.model import Info, Swagger
+from openapi.tests.fixtures import iter_examples
 
 
 def _assert_valid(data):
@@ -30,8 +25,7 @@ def test_validation():
 
     """
     for example in iter_examples():
-        yield _assert_valid, example
-        break
+        _assert_valid(example)
 
 
 def test_invalid_swagger():

@@ -1,8 +1,9 @@
 """
 Custom hamcrest matchers.
 """
-from hamcrest.core.base_matcher import BaseMatcher
 from json import dumps, loads
+
+from hamcrest.core.base_matcher import BaseMatcher
 
 
 class JSONMatcher(BaseMatcher):

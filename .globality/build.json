@@ -1,6 +1,10 @@
 {
-  "type": "python-library",
   "params": {
-    "name": "openapi"
-  }
+    "name": "openapi",
+    "pypi": {
+      "repository": "pypi"
+    }
+  },
+  "type": "python-library",
+  "version": "2024.52.0"
 }
