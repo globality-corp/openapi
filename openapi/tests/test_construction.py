@@ -106,7 +106,7 @@ def response(description, resource=None, headers=None):
     )
     if resource is not None:
         response.schema = JsonReference({
-            "$ref": "#/definitions/{}".format(resource),
+            "$ref": f"#/definitions/{resource}",
         })
     if headers is not None:
         response.headers = headers

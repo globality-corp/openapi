@@ -12,8 +12,8 @@ from openapi import dumps, loads
 from openapi.model import (
     Info,
     License,
-    MimeType,
     MediaTypeList,
+    MimeType,
     PathItem,
     Paths,
     Swagger,
@@ -54,4 +54,4 @@ def test_load_and_dump():
 
     """
     for example in iter_examples():
-        yield _assert_load_and_dump, example
+        _assert_load_and_dump(example)

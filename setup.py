@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 from setuptools import find_packages, setup
 
+
 project = "openapi"
-version = "1.1.1"
+version = "2.0.0"
 
 setup(
     name=project,
@@ -19,24 +20,47 @@ setup(
     zip_safe=False,
     keywords="openapi swagger",
     install_requires=[
-        "inflection>=0.3.1",
-        "jsonschema[format]>=2.6.0",
+        "inflection>=0.5.1",
+        "jsonschema>=3.2.0",
     ],
     extras_require={
         "yaml": [
             "PyYAML>=3.12",
         ],
+        "test": [
+            "coverage>=7.5.3",
+            "PyHamcrest>=2.1.0",
+            "pytest-cov>=5.0.0",
+            "pytest>=8.2.0",
+            "pytest-cov>=5.0.0",
+            "PyYAML>=6.0.1",
+        ],
+        "lint": [
+            "flake8",
+            "flake8-print",
+            "flake8-isort",
+        ],
+        "typehinting": [
+            "mypy",
+            "types-psycopg2",
+            "types-python-dateutil",
+            "types-pytz",
+            "types-setuptools",
+            "types-PyYAML",
+        ],
     },
     setup_requires=[
-        "nose>=1.3.6",
     ],
     dependency_links=[
     ],
     entry_points={
     },
     tests_require=[
-        "coverage>=3.7.1",
-        "mock>=1.0.1",
-        "PyHamcrest>=1.8.5",
+        "coverage>=7.5.3",
+        "PyHamcrest>=2.1.0",
+        "pytest-cov>=5.0.0",
+        "pytest>=8.2.0",
+        "pytest-cov>=5.0.0",
+        "PyYAML>=6.0.1",
     ],
 )

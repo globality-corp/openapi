@@ -8,13 +8,13 @@ extra behavior to support type-conversion and schema validation.
 from contextlib import closing
 from io import StringIO
 from json import dump, load
-from re import match
 from os.path import dirname, join
+from re import match
 
 from jsonschema import RefResolver, validate
 
 from openapi.naming import make_key_name
-from openapi.registry import lookup, REGISTRY
+from openapi.registry import REGISTRY, lookup
 
 
 # load the schema
@@ -33,7 +33,7 @@ class Schema(dict):
 
         """
         try:
-            return super(Schema, self).__getitem__(key)
+            return super().__getitem__(key)
         except KeyError:
             if key == "definitions":
                 return SCHEMA["definitions"]
@@ -104,7 +104,7 @@ class SchemaAwareDict(dict, SchemaAware):
         Override item access to constuct model objects.
 
         """
-        value = super(SchemaAwareDict, self).__getitem__(key)
+        value = super().__getitem__(key)
         if isinstance(value, SchemaAware):
             return value
 
@@ -171,7 +171,7 @@ class SchemaAwareList(list, SchemaAware):
         Override item access to convert types.
 
         """
-        value = super(SchemaAwareList, self).__getitem__(index)
+        value = super().__getitem__(index)
         if isinstance(value, SchemaAware):
             return value
 
