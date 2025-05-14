@@ -48,22 +48,6 @@ steps:
       - aws codeartifact login --tool pip --repository globality-pypi-local --domain globality --domain-owner $AWS_ACCOUNT_ID --region us-east-1
       - ./entrypoint.sh test
 
-  - name: sonar-scanner
-    image: sonarsource/sonar-scanner-cli:latest
-    environment:
-      SONARQUBE_TOKEN:
-        from_secret: SONARQUBE_TOKEN
-    commands:
-      - >-
-        sonar-scanner
-        -Dsonar.login=$SONARQUBE_TOKEN
-        -Dsonar.projectBaseDir=/drone/src
-        -Dsonar.host.url=https://sonarqube.globality.cloud
-        -Dsonar.branch.name=${DRONE_BRANCH}
-    depends_on:
-      - lint-and-type-check
-      - test-py311-latest
-
   - name: release-python-library-codeartifact
     image: python:3.11-slim
     environment:
@@ -76,7 +60,8 @@ steps:
       EXTRA_INDEX_URL:
         from_secret: EXTRA_INDEX_URL
     depends_on:
-      - sonar-scanner
+      - lint-and-type-check
+      - test-py311-latest
     commands:
       - pip install -U pip==24.0
       - pip install --quiet awscli twine==4.0.2 packaging==24.0
@@ -123,13 +108,6 @@ steps:
     image: python:3.11-slim
     commands:
       - echo "Dummy step to trigger dependency-validation"
-
----
-kind: secret
-name: SONARQUBE_TOKEN
-get:
-  path: secrets/dev/drone
-  name: DRONE_SONARQUBE_TOKEN
 
 ---
 kind: secret
